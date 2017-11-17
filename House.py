@@ -5,10 +5,11 @@ class House:
 
 	def __init__ (self, numMonsters):
 		self.numMonsters = numMonsters
-		monstersArray = []
+		self.monstersArray = []
 
-	def addMonster (Monster):
-		monstersArray.append(Monster)
+	def addMonster (self, Monster):
+		self.monstersArray.append(Monster)
 
-	def getMonsters():
-		return monsterArray
+	def get_monsters(self):
+		for x in self.monstersArray:
+			print (x.name)
