@@ -6,10 +6,10 @@ class House:
 	def __init__ (self, numMonsters):
 		self.numMonsters = numMonsters
 		self.monstersArray = []
-
-	def addMonster (self, Monster):
-		self.monstersArray.append(Monster)
+		for x in range(0,numMonsters):
+			self.monstersArray.append(Monster(randint(0,4)))
+			#self.monstersArray[x].add_observer(self)
 
 	def get_monsters(self):
 		for x in self.monstersArray:
-			print (x.name)
+			print (x.get_name())
