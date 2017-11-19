@@ -1,7 +1,9 @@
+from observable import Observable
 from random import randint
 
-class Monster:
+class Monster(Observable):
 	def __init__ (self, randNum):
+		super().__init__()
 		if randNum == 0:
 			self.name = "Person"
 			self.hitpoint = 100
@@ -22,6 +24,7 @@ class Monster:
 			self.name = "Werewolf"
 			self.hitpoints = 200
 			self.mtype = randNum
+		self.update()
 
 	def get_name(self):
 		return self.name
@@ -49,7 +52,7 @@ class Monster:
 			else: 
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
-				#notify house
+				#self.update()
 				self.name = "Person"
 				self.hitpoint = 100
 				self.mtype = randNum
