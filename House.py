@@ -17,6 +17,9 @@ class House(Observer):
 	def get_monsters(self):
 		for x in self.monstersArray:
 			print (x.get_name())
+	
+	def get_numMonsters(self):
+		return numMonsters
 
 	def update(self):
 		print ("Monster updated!")
