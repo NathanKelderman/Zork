@@ -36,7 +36,7 @@ class House(Observer, Observable):
 		self.monstersArray.insert(num, Monster(0))
 		self.monstersArray[num].add_observer(self)
 		if all( x.get_mtype() is 0 for x in self.monstersArray):
-			print("sucess")
+			print("House has been cleared!")
 			super().update(self)
 
 	def getMonsters(self):

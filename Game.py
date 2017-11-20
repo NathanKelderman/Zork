@@ -26,7 +26,7 @@ if __name__ == "__main__":
 	p = Player()
 	inventory = p.get_inventory()	
 	
-	commands = [ "move n", "move e", "move s", "move w", "attack", "map", "inventory", "exit", "house", "weapon"]
+	commands = [ "move n", "move e", "move s", "move w", "attack", "map", "inventory", "exit", "house", "weapon", "help"]
 	command = input("Enter a command or help for help: ")
 	command.lower()
 	while command != "exit":
