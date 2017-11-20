@@ -4,6 +4,17 @@ from random import randint
 from collections import defaultdict
 from Weapon import Weapon
 
+class Neighborhood:
+	def __init__(self):
+		neighborhood = []
+		for row in range(3):
+			neighborhood.append([])
+			for col in range(3):
+				neighorhood[row].append(House(randint(0,4)))
+	def get_neighborhood(self):
+		return neighborhood
+
+
 if __name__ == "__main__":
 	neighborhood = []
 	for row in range(3):

@@ -28,6 +28,10 @@ class House(Observer):
 		return total
 
 	def update(self, monster):
+		num = self.monstersArray.index(monster)
+		self.monstersArray.remove(monster)
+		self.monstersArray.insert(num, Monster(0))
+		self.monstersArray[num].add_observer(self)
 		print ("Monster updated!")
 
 	def getMonsters(self):
