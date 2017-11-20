@@ -19,20 +19,20 @@ class Weapon:
 			self.wtype = wtype
 			self.usesLeft = 1
 
-	def use(self, wtype):
-		if wtype == 0:
+	def use(self):
+		if self.wtype == 0:
 			return 1
-		if wtype == 1:
+		if self.wtype == 1:
 			self.usesLeft -= 1
-			#if no uses left notify player
+			print("Weapon has no more uses!")
 			return randint(0,75)/100.0 + 1
-		if wtype == 2:
+		if self.wtype == 2:
 			self.usesLeft -= 1
-			#if no uses left notify player
+			print("weapon has no more uses!")
 			return randint(0,40)/100.0 + 2
-		if wtype == 3:
+		if self.wtype == 3:
 			self.usesLeft -= 1
-			#if no uses left notify player
+			print("Weapon has no more uses!")
 			return randint(50,200)/100.0 + 3
 
 	def get_name(self):
