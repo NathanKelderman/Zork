@@ -31,13 +31,13 @@ class House(Observer, Observable):
 
 	def update(self, monster):
 		num = self.monstersArray.index(monster)
+		print(self.monstersArray[num].get_name(), "has been slain!")
 		self.monstersArray.remove(monster)
 		self.monstersArray.insert(num, Monster(0))
 		self.monstersArray[num].add_observer(self)
-		print(self.monstersArray[num].get_name(), " has been slain!")
 		if all( x.get_mtype() is 0 for x in self.monstersArray):
-			self.update(self)
-			print("House has been cleared of monsters!")
+			print("sucess")
+			super().update(self)
 
 	def getMonsters(self):
 		return self.monstersArray

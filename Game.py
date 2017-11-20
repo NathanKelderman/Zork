@@ -12,11 +12,12 @@ class Neighborhood(Observer):
 		for row in range(3):
 			self.neighborhood.append([])
 			for col in range(3):
-				self.neighborhood[row].append(House(randint(0,4)))
+				self.neighborhood[row].append(House(randint(1,4)))
 				self.neighborhood[row][col].add_observer(self)
 	def get_neighborhood(self):
 		return self.neighborhood
-
+	def update(self, house):
+		print("House has been cleared!")
 
 if __name__ == "__main__":
 	n = Neighborhood()
