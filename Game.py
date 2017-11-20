@@ -55,8 +55,8 @@ if __name__ == "__main__":
 
 		if command == "attack":
 			monsters = neighborhood[p.get_locationx()][p.get_locationy()].getMonsters()
-			atkMod = inventory[p.get_weapon_held()].use()
 			weap =  inventory[p.get_weapon_held()].get_type()
+			atkMod = inventory[p.get_weapon_held()].use()
 			for x in range(len(monsters)):
 				monsters[x].hit(randint(10,20)* atkMod, weap)
 

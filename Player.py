@@ -1,7 +1,8 @@
 from Weapon import Weapon
 from random import randint
+from observer import Observer
 
-class Player:
+class Player(Observer):
 
 	def __init__ (self):
 		self.hitpoints = randint(100,125)
@@ -11,6 +12,7 @@ class Player:
 		self.inventory.append(Weapon(0))
 		for x in range (9):
 			self.inventory.append(Weapon(randint(1,3)))
+			self.inventory[x+1].add_observer(self)
 		self.weapon_held = 0
 
 	def get_hitpoints(self):
@@ -42,3 +44,8 @@ class Player:
 	
 	def set_inventory(self, update):
 		self.inventory = update	
+
+	def update(self, obj):
+		self.inventory.remove(obj)
+		print("Weapon has run out of uses!")
+		self.weapon_held = 0

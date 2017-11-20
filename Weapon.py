@@ -1,7 +1,9 @@
 from random import randint 
+from observable import Observable
 
-class Weapon:
+class Weapon(Observable):
 	def __init__(self, wtype):
+		super().__init__()
 		if wtype == 0:
 			self.name = "HersheyKisses"
 			self.wtype = wtype
@@ -25,17 +27,17 @@ class Weapon:
 		if self.wtype == 1:
 			self.usesLeft -= 1
 			if self.usesLeft < 1:
-				print("Weapon has no more uses!")
+				self.update(self)
 			return randint(0,75)/100.0 + 1
 		if self.wtype == 2:
 			self.usesLeft -= 1
 			if self.usesLeft < 1:
-				print("Weapon has no more uses!")
+				self.update(self)
 			return randint(0,40)/100.0 + 2
 		if self.wtype == 3:
 			self.usesLeft -= 1
 			if self.usesLeft < 1:
-				print("Weapon has no more uses!")
+				self.update(self)
 			return randint(50,200)/100.0 + 3
 
 	def get_type(self):
