@@ -4,21 +4,28 @@ from random import randint
 from collections import defaultdict
 
 if __name__ == "__main__":
-	neighborhood = defaultdict(list)
-	for x in range(0,3):
-		for y in range(0,3):
-			num = randint(1,5)
-			neighborhood[x,y].append(House(num))
+	neighborhood = []
+	for row in range(3):
+		neighborhood.append([])
+		for col in range(3):
+			neighborhood[row].append(House(randint(0,4)))
+#	[[House(randint(0,4)) for x in range(3)] for y in range(3)]
+#	defaultdict(list)
+#	for x in range(0,3):
+#		for y in range(0,3):
+#			num = randint(1,5)
+#			neighborhood[x][y] = House(num)
 #			for z in range(0,num):
 #				m = Monster(randint(0,4))
 #				neighborhood[x,y].add_monster(m)
-#				m.add_observer(neighborhood[x,y])
-	
+#				m.add_observer(neighborhood[x,y])	
 	for x in range(0,3):
 		for y in range(0,3):
 			print("House ",x,y)
-#			neighborhood[x,y].get_monsters()
-
+			neighborhood[x][y].get_monsters()
+	
+#	monsters = neighborhood[0][0].getMonsters()
+	
 	locationx = 0
 	locationy = 0
 	
@@ -48,12 +55,13 @@ if __name__ == "__main__":
 				print("Cannot move west.")
 
 		if command == "attack":
-			continue#attack
+			monsters = neighborhood[locationx][locationy].getMonsters()
+			for x in range(len(monsters)):
+				monsters[x].hit(100,0)
 
 		if command == "map":
-#			for x in range(0,2):
-#				print(neighborhood[x,0].get_numMonsters(), neighborhood[x,1], neighborhood[x,2])
-			continue
+			for x in range(0,3):
+				print(neighborhood[x][0].get_numMonsters(), neighborhood[x][1].get_numMonsters(), neighborhood[x][2].get_numMonsters())
 
 		if command == "inventory":
 			continue#display inventory

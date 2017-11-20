@@ -24,7 +24,6 @@ class Monster(Observable):
 			self.name = "Werewolf"
 			self.hitpoints = 200
 			self.mtype = randNum
-		self.update()
 
 	def get_name(self):
 		return self.name
@@ -52,37 +51,37 @@ class Monster(Observable):
 			else: 
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
-				#self.update()
+				self.update()
 				self.name = "Person"
 				self.hitpoint = 100
-				self.mtype = randNum
+				self.mtype = 0
 		if self.mtype == 2:
 			if weapon == 2: 
 				pass
 			else: 
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
-				#notify house
+				self.update()
 				self.name = "Person"
 				self.hitpoint = 100
-				self.mtype = randNum
+				self.mtype = 0
 		if self.mtype == 3:
 			if weapon == 3:
 				self.hitpoints -= atk*5
 			else: 
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
-				#notify house
+				self.update()
 				self.name = "Person"
 				self.hitpoint = 100
-				self.mtype = randNum
+				self.mtype = 0
 		if self.mtype == 4:
 			if weapon == 1 or weapon == 2: 
 				pass
 			else: 
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
-				#notify house
+				self.update()
 				self.name = "Person"
 				self.hitpoint = 100
-				self.mtype = randNum
+				self.mtype = 0
