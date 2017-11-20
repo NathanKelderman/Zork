@@ -6,7 +6,7 @@ class Monster(Observable):
 		super().__init__()
 		if randNum == 0:
 			self.name = "Person"
-			self.hitpoint = 100
+			self.hitpoints = 100
 			self.mtype = randNum
 		if randNum == 1:
 			self.name = "Zombie"

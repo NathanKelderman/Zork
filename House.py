@@ -15,11 +15,17 @@ class House(Observer):
 		self.monstersArray.append(monster)
 
 	def get_monsters(self):
+		if self.numMonsters == 0:
+			print("House is empty!")
 		for x in self.monstersArray:
-			print (x.get_name())
+			print (x.get_name(), " HP:", x.get_hitpoints())
 	
 	def get_numMonsters(self):
-		return self.numMonsters
+		total = 0
+		for x in range (self.numMonsters):
+			if self.monstersArray[x].get_mtype() != 0:
+				total += 1
+		return total
 
 	def update(self):
 		print ("Monster updated!")
