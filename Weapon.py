@@ -24,15 +24,18 @@ class Weapon:
 			return 1
 		if self.wtype == 1:
 			self.usesLeft -= 1
-			print("Weapon has no more uses!")
+			if self.usesLeft < 1:
+				print("Weapon has no more uses!")
 			return randint(0,75)/100.0 + 1
 		if self.wtype == 2:
 			self.usesLeft -= 1
-			print("weapon has no more uses!")
+			if self.usesLeft < 1:
+				print("Weapon has no more uses!")
 			return randint(0,40)/100.0 + 2
 		if self.wtype == 3:
 			self.usesLeft -= 1
-			print("Weapon has no more uses!")
+			if self.usesLeft < 1:
+				print("Weapon has no more uses!")
 			return randint(50,200)/100.0 + 3
 
 	def get_type(self):
