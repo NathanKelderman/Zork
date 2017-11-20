@@ -1,26 +1,25 @@
 from House import House
+from observer import Observer
 from Monster import Monster
 from random import randint
 from collections import defaultdict
 from Weapon import Weapon
 
-class Neighborhood:
+class Neighborhood(Observer):
 	def __init__(self):
-		neighborhood = []
+		self.neighborhood = []
 		for row in range(3):
-			neighborhood.append([])
+			self.neighborhood.append([])
 			for col in range(3):
-				neighorhood[row].append(House(randint(0,4)))
+				self.neighborhood[row].append(House(randint(0,4)))
+				self.neighborhood[row][col].add_observer(self)
 	def get_neighborhood(self):
-		return neighborhood
+		return self.neighborhood
 
 
 if __name__ == "__main__":
-	neighborhood = []
-	for row in range(3):
-		neighborhood.append([])
-		for col in range(3):
-			neighborhood[row].append(House(randint(0,4)))
+	n = Neighborhood()
+	neighborhood = n.get_neighborhood()
 	
 	my_hitpoints = randint(100,125)	
 	inventory = []	

@@ -1,10 +1,12 @@
 from observer import Observer
+from observable import Observable
 from Monster import Monster
 from random import randint
 
-class House(Observer):
+class House(Observer, Observable):
 
 	def __init__ (self, numMonsters):
+		super().__init__()
 		self.numMonsters = numMonsters
 		self.monstersArray = []
 		for x in range(0,numMonsters):
