@@ -51,7 +51,7 @@ class Monster(Observable):
 			else: 
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
-				self.update()
+				self.update(self)
 				#self.remove_observer()
 		if self.mtype == 2:
 			if weapon == 2: 

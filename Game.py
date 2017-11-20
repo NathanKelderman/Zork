@@ -10,22 +10,6 @@ if __name__ == "__main__":
 		neighborhood.append([])
 		for col in range(3):
 			neighborhood[row].append(House(randint(0,4)))
-#	[[House(randint(0,4)) for x in range(3)] for y in range(3)]
-#	defaultdict(list)
-#	for x in range(0,3):
-#		for y in range(0,3):
-#			num = randint(1,5)
-#			neighborhood[x][y] = House(num)
-#			for z in range(0,num):
-#				m = Monster(randint(0,4))
-#				neighborhood[x,y].add_monster(m)
-#				m.add_observer(neighborhood[x,y])	
-	for x in range(0,3):
-		for y in range(0,3):
-			print("House ",x,y)
-			neighborhood[x][y].get_monsters()
-	
-#	monsters = neighborhood[0][0].getMonsters()
 	
 	my_hitpoints = randint(100,125)	
 	inventory = []	
@@ -36,10 +20,12 @@ if __name__ == "__main__":
 	locationx = 0
 	locationy = 0
 	
-	#possible commands: move NESW, attack, map, inventory, exit, house info
+	commands = [ "move n", "move e", "move s", "move w", "attack", "map", "inventory", "exit", "house", "weapon"]
 	command = input("Enter a command or help for help: ")
 	command.lower()
 	while command != "exit":
+		if command not in commands:
+			print("Not a valid command.")
 		if command == "move w":
 			if locationy > 0:
 				locationy -= 1
@@ -86,7 +72,7 @@ if __name__ == "__main__":
 			neighborhood[locationx][locationy].get_monsters()
 
 		if command == "help":
-			print("Here is a list of possible commands: move n\e\s\w, attack, map, status, house info, exit")
+			print("Here is a list of possible commands: move n\e\s\w, attack, map, status, house, weapon, exit")
 		
 		if command == "weapon":
 			input2 = input("Which inventory slot? ").lower()

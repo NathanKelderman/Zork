@@ -27,7 +27,7 @@ class House(Observer):
 				total += 1
 		return total
 
-	def update(self):
+	def update(self, monster):
 		print ("Monster updated!")
 
 	def getMonsters(self):
