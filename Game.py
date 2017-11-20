@@ -66,8 +66,8 @@ if __name__ == "__main__":
 		if command == "inventory":
 			continue#display inventory
 
-		if command == "house info":
-			continue#print current house
+		if command == "house":
+			neighborhood[locationx][locationy].get_monsters()
 
 		if command == "help":
 			print("Here is a list of possible commands: move n\e\s\w, attack, map, inventory, house info, exit") 

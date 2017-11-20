@@ -52,9 +52,7 @@ class Monster(Observable):
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
 				self.update()
-				self.name = "Person"
-				self.hitpoint = 100
-				self.mtype = 0
+				#self.remove_observer()
 		if self.mtype == 2:
 			if weapon == 2: 
 				pass
@@ -62,9 +60,7 @@ class Monster(Observable):
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
 				self.update()
-				self.name = "Person"
-				self.hitpoint = 100
-				self.mtype = 0
+				#self.remove_observer()
 		if self.mtype == 3:
 			if weapon == 3:
 				self.hitpoints -= atk*5
@@ -72,9 +68,7 @@ class Monster(Observable):
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
 				self.update()
-				self.name = "Person"
-				self.hitpoint = 100
-				self.mtype = 0
+				#self.remove_observer()
 		if self.mtype == 4:
 			if weapon == 1 or weapon == 2: 
 				pass
@@ -82,6 +76,4 @@ class Monster(Observable):
 				self.hitpoints -= atk
 			if self.hitpoints < 1:
 				self.update()
-				self.name = "Person"
-				self.hitpoint = 100
-				self.mtype = 0
+				#self.remove_observer()
