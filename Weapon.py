@@ -35,6 +35,9 @@ class Weapon:
 			print("Weapon has no more uses!")
 			return randint(50,200)/100.0 + 3
 
+	def get_type(self):
+		return self.wtype
+
 	def get_name(self):
 		return self.name
 
