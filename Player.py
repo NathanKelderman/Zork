@@ -31,7 +31,7 @@ class Player(Observer):
 		return self.weapon_held
 
 	def set_hitpoints(self, num):
-		self.hitpoints = num
+		self.hitpoints += num
 
 	def set_locationx(self, move):
 		self.locationx += move
