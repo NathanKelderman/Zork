@@ -1,6 +1,8 @@
 from random import randint 
 from observable import Observable
-
+# This is the weapon class. It stores what type a weapon is and how many
+# uses that particular weapon has left. It is being observed by the player
+# and notifies the inventory when it runs out of uses.
 class Weapon(Observable):
 	def __init__(self, wtype):
 		super().__init__()
@@ -20,7 +22,9 @@ class Weapon(Observable):
 			self.name = "NerdBombs"
 			self.wtype = wtype
 			self.usesLeft = 1
-
+	
+	# The use method returns the attack modifier as well as remove 1 use from 
+	# the weapon and notifies the player if uses are used up
 	def use(self):
 		if self.wtype == 0:
 			return 1

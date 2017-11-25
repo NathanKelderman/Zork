@@ -2,6 +2,10 @@ from Weapon import Weapon
 from random import randint
 from observer import Observer
 
+# This is the player class. It stores the hitpoints, location,
+# inventory, and which weapon is currently held. It observes the
+# weapon class so when a weapon is used up it will be notified and 
+# can remove it from the inventory. 
 class Player(Observer):
 
 	def __init__ (self):
