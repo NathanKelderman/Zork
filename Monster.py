@@ -1,7 +1,10 @@
 from observable import Observable
 from random import randint
-
+#Monster Class that stores the monsters and notifies the house class
+#when they die, also stores monsters attack rates and HP
 class Monster(Observable):
+
+	#Constructor for Monster class
 	def __init__ (self, randNum):
 		super().__init__()
 		if randNum == 0:
@@ -24,7 +27,7 @@ class Monster(Observable):
 			self.name = "Werewolf"
 			self.hitpoints = 200
 			self.mtype = randNum
-
+	#Getter methods
 	def get_name(self):
 		return self.name
 	def get_hitpoints(self):
@@ -32,6 +35,7 @@ class Monster(Observable):
 	def get_mtype(self):
 		return self.mtype
 
+	#Attack method that deals damage to the player
 	def attack(self):
 		if self.mtype == 0:
 			return -1
@@ -44,6 +48,8 @@ class Monster(Observable):
 		if self.mtype == 4:
 			return randint(0,40)
 
+	#Hit method that hits the monsters and notifies the House when
+	#their HP reaches 0
 	def hit(self, atk, weapon):
 		if self.mtype == 1:
 			if weapon == 1:
